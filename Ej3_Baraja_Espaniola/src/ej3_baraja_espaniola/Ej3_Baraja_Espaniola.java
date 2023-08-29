@@ -55,10 +55,6 @@ public class Ej3_Baraja_Espaniola {
                             System.out.println("La opcion es erronea. Vuelva a intentar....");
             }            
         } while (continuar);
-        
-
-        
-        
     }
     
 }
