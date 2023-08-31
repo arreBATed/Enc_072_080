@@ -3,7 +3,6 @@ package servicios;
 import entidades.Perro;
 import entidades.Persona;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class PersonaServicios {
@@ -77,14 +76,22 @@ public class PersonaServicios {
         });
     }
     
-    public void AdoptarPerro(String nombre)  {
+    public Persona AdoptarPerro(Persona p, Perro mascota)  {
         
-        Iterator itPersona = this.grupoPersonas.iterator();
-        boolean tratoHecho = false; 
-        while (itPersona.hasNext()) {
-            if itPersona.next().
-        }
-                
-
+            p.setMascota(mascota);
+            return p;  
     }
+    
+    public boolean estaDisponibleGrupo(String nombre) {
+        
+        boolean presente = false;
+        for (Persona pAux : this.grupoPersonas) {
+            if ((pAux.getNombre().equals(nombre)) && (!(pAux.getMascota().getNombre().equals("No_posee") )))  {
+                presente = true;
+                break;
+            }
+        }
+        return presente; 
+    }
+                
 }

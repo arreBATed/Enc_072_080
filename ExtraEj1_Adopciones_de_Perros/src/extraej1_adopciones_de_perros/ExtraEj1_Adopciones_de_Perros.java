@@ -13,8 +13,7 @@ public class ExtraEj1_Adopciones_de_Perros {
         
         PerroServicios perroS = new PerroServicios();
         PersonaServicios persServ = new PersonaServicios();
-        Perro perroAux;
-        String cadena;
+        String cadena, cadena1;
         boolean continuar = true;
         int opcion;
         do {
@@ -44,10 +43,22 @@ public class ExtraEj1_Adopciones_de_Perros {
                             System.out.println("El listado de los perros para adepotar es....");
                             perroS.MostrarGrupoPerros();
                             break;
-                case 5  :
-                            System.out.print("Ingrese el nombre del perro a adoptar: ");
+                case 5  :   
+                            System.out.print("Ingrese el nombre de la persona que quiere adoptar un perro: ");
                             cadena = leer.next();
-                            
+                            if (persServ.estaDisponibleGrupo(cadena)) {
+                                    System.out.print("Ingrese el nombre del perro a adoptar: ");
+                                    cadena1 = leer.next();
+                                    if (perroS.perroDisponible(cadena1)) {
+                                            Persona AdoptarPerro(Persona p,perroS.buscarPerroGrupoPerros(cadena1)) 
+                                            persServ.AdoptarPerro(p, mascota)
+                                    }
+                                    else    {
+                                        
+                                    }
+                            else    {
+                                    
+                            }
                             break;
                 case 6  :   
                             System.out.print("Gracias por utilizar el programa.");

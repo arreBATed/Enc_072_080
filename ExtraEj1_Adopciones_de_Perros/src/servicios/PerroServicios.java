@@ -2,7 +2,6 @@ package servicios;
 
 import entidades.Perro;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class PerroServicios {
@@ -61,6 +60,7 @@ public class PerroServicios {
         for (Perro pAux : this.grupoPerros) {
             if ((pAux.getNombre().equals(nombre)) && (!(pAux.isAdoptado())))  {
                 presente = true;
+                break;
             }
         }
         return presente; 
@@ -84,4 +84,16 @@ public class PerroServicios {
         } while (continuar);
     }
     
+    public Perro buscarPerroGrupoPerros(String nombre)  {
+        
+        Perro p;
+        
+        p = new Perro();
+        for (Perro pAux : this.grupoPerros) {
+            if ((pAux.getNombre().equals(nombre)) && (!(pAux.isAdoptado())))  {
+                p = pAux;
+            }
+        }
+        return  p;
+    }
 }
